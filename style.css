@@ -156,3 +156,16 @@ img {
     p { font-size: 14px; }
     img { height: 40vmin; }
 }
+
+
+@media only screen and (max-width: 400px) {
+    .grid { grid-template-columns: repeat(1, 1fr); }
+    .grid div { 
+        padding-top: 0px;
+        margin-top: 0px;
+    }
+    h1 { font-size: 1rem; }
+    p { font-size: 14px; }
+    img { height: 40vmin; }
+    nav { top: 1rem; right: 1rem; }
+}
