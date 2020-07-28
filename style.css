@@ -56,7 +56,7 @@ section {
 
 section h1 {
     font-size: 4rem;
-    font-family: 'CooperBlack', sans-serif;
+    font-family: 'Clarendon', sans-serif;
     margin-bottom: 10px;
 }
 
@@ -66,11 +66,7 @@ section h1 {
     bottom: 1rem;
 }
 
-section p {
-    font-family: 'FranklinGothic', Arial, Helvetica, sans-serif;
-    /* margin: 5px; */
-    /* font-size: 1.3rem; */
-}
+section p { font-family: 'FranklinGothic', Arial, Helvetica, sans-serif; }
 
 a {
     display: inline-block;
@@ -107,6 +103,9 @@ img {
     display: block;
     margin: 5px;
     height: 50vh; 
+}
+.small_vid { 
+    height: 45vmin;
 }
 
 /* text-colors */
