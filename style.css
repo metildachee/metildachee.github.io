@@ -31,6 +31,7 @@ nav {
     right: 3rem;
     display: flex;
     flex-direction: column;
+    z-index: 1;
 }
 
 nav a { 
@@ -43,11 +44,12 @@ nav a {
     height: 100%;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
 section {
     height: 100vh;
-    display: relative;
+    position: relative;
     padding: 10px;
     scroll-snap-align: center;
 }
@@ -58,10 +60,10 @@ section h1 {
     margin-bottom: 10px;
 }
 
-#down-arrow {
+.down-arrow {
     font-size: 3rem;
     position: absolute;
-    bottom:10px;
+    bottom: 1rem;
 }
 
 section p {
@@ -76,7 +78,9 @@ a {
     padding-left: 5px;
 }
 
-#down-arrow:hover, a:hover {
+a:hover { cursor: pointer; }
+
+.down-arrow:hover, a:hover, .btn:hover {
     animation: shake 500ms;
     transform: translate3d(0, 0, 0);
 }
@@ -91,10 +95,11 @@ a {
 }
 .display-inline { display: inline-block; }
 .padding-top { padding-top: 20px; }
+.padding-little { padding-top: 10px; }
+.padding-x { width: 50vw; }
 
 .grid {
     display: grid;
-    /* grid-template-columns: repeat(2, 1fr); */
     grid-template-columns: 35% auto;
 }
 
@@ -103,6 +108,7 @@ img {
     margin: 5px;
     height: 50vh; 
 }
+
 /* text-colors */
 .pink-text { color: #e751bf; }
 .blue-text { color: #141b26; }
@@ -130,6 +136,14 @@ img {
     color: #141b26;
     background-color: grey;
     font-family: 'FranklinGothic', serif;
+}
+
+.btn { 
+    text-decoration: none;
+    text-transform: uppercase;
+    padding-top: 10px;
+    color:  white;
+    font-size: 1.2rem;
 }
 
 .background-blue {
