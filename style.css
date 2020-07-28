@@ -63,7 +63,8 @@ section h1 {
 .down-arrow {
     font-size: 3rem;
     position: absolute;
-    bottom: 1rem;
+    bottom: 10px;
+    text-align: center;
 }
 
 section p { font-family: 'FranklinGothic', Arial, Helvetica, sans-serif; }
