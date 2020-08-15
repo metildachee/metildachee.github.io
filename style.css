@@ -111,7 +111,7 @@ img {
 
 /* text-colors */
 .pink-text { color: #e751bf; }
-.blue-text { color: #141b26; }
+.blue-text { color: #141b26 !important; }
 
 .badge {
     text-transform: uppercase;
@@ -144,6 +144,7 @@ img {
     padding-top: 10px;
     color:  white;
     font-size: 1.2rem;
+    font-weight: 900;
 }
 
 .background-blue {
