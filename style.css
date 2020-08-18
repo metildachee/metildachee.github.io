@@ -60,6 +60,8 @@ section h1 {
     margin-bottom: 10px;
 }
 
+.class-font { font-family: 'Clarendon', sans-serif; }
+
 .down-arrow {
     font-size: 3rem;
     position: absolute;
