@@ -154,8 +154,10 @@ img {
 }
 
 .smaller_vid {
+    /* width: 100%;
+    margin: auto; */
     width: 100%;
-    margin: auto;
+    height: auto;
 }
 
 .grid-2 {
