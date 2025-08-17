@@ -1,15 +1,17 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import nodePolyfills from 'vite-plugin-node-polyfills'
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), nodePolyfills()],
   base: '/heart2home/',
   resolve: {
     alias: {
-      fs: false,
-      path: false,
-      os: false,
-      module: false,
+      // point to empty shims instead of "false"
+      fs: 'rollup-plugin-node-builtins/mock/fs',
+      path: 'rollup-plugin-node-builtins/mock/path',
+      os: 'rollup-plugin-node-builtins/mock/os',
+      module: 'rollup-plugin-node-builtins/mock/module',
     },
   },
   optimizeDeps: {
