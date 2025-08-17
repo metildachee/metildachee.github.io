@@ -41,5 +41,4 @@ jobs:
           publish_dir: |
             .                     # Root files (including your main index.html)
             heart2home/dist/  # Built Vite app
-            
           keep_files: true
