@@ -1,4 +1,4 @@
-name: Deploy React App
+name: Deploy
 
 on:
   push:
@@ -10,25 +10,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Setup Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          
-      - name: Clean install
+      - name: Build Vite App
         run: |
           cd heart2home
-          rm -rf node_modules package-lock.json
-          npm install --no-optional
-          
-      - name: Build
-        run: |
-          cd heart2home
+          npm install
           npm run build
           
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: heart2home/dist
-          destination_dir: heart2home
+          publish_dir: |
+            .                     # Root files (including your main index.html)
+            heart2home/dist-heart2home  # Built Vite app
+          keep_files: true
