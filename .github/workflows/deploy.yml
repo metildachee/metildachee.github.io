@@ -23,5 +23,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: |
             .                     # Root files (including your main index.html)
-            heart2home/dist-heart2home  # Built Vite app
+            heart2home/dist/  # Built Vite app
           keep_files: true
