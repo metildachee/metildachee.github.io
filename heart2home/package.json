@@ -3,10 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://metildachee.github.io/heart2home",
+  "homepage": "https://metildachee.github.io/heart2home/",
   "scripts": {
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "fast-xml-parser": "^5.2.5",
