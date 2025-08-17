@@ -1,8 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import JSZip from "jszip";
 import { XMLParser } from "fast-xml-parser";
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
 
 // ---- Utility: Apple Health parsing (export.xml) --------------------------
 function parseAppleHealthXML(xmlText) {
