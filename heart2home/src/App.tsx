@@ -1,6 +1,14 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import JSZip from "jszip";
 import { XMLParser } from "fast-xml-parser";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [react()],
+  base: '/heart2home/', // This is critical for GitHub Pages subdirectory
+})
 
 // ---- Utility: Apple Health parsing (export.xml) --------------------------
 function parseAppleHealthXML(xmlText) {
