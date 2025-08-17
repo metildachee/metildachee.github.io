@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/heart2home/',
+  base: '/heart2home/dist/',
   optimizeDeps: {
     exclude: ['fsevents'],   // 👈 ignore macOS-only dep
   },
