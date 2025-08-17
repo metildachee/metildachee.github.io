@@ -4,12 +4,6 @@ import { XMLParser } from "fast-xml-parser";
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  base: '/heart2home/', // This is critical for GitHub Pages subdirectory
-})
-
 // ---- Utility: Apple Health parsing (export.xml) --------------------------
 function parseAppleHealthXML(xmlText) {
   const parser = new XMLParser({
