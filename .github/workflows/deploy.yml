@@ -1,8 +1,8 @@
-name: Deploy
+name: Deploy React App
 
 on:
   push:
-    branches: [ "master" ] # or "master" if that's your default branch
+    branches: [master]
 
 jobs:
   deploy:
@@ -10,19 +10,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      # Build and deploy your React app
-      - name: Deploy React app
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          
+      - name: Clean install
         run: |
           cd heart2home
+          rm -rf node_modules package-lock.json
           npm install --no-optional
+          
+      - name: Build
+        run: |
+          cd heart2home
           npm run build
-          npm run deploy
           
-          
-      # Deploy your root index.html (if it's in the root of your repo)
-      - name: Deploy root site
+      - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: . # Your root index.html location
-          keep_files: true # Preserves existing files in gh-pages branch
+          publish_dir: heart2home/dist
+          destination_dir: heart2home
