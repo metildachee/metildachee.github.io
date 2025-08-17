@@ -6,7 +6,7 @@
   "homepage": "https://metildachee.github.io/heart2home/",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --skipLibCheck && vite build"
+    "build": "tsc --skipLibCheck && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
