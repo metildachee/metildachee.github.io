@@ -7,21 +7,36 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
+      # 1️⃣ Checkout the repo
       - uses: actions/checkout@v4
 
-      
-      
-      - name: Install pnpm
+      # 2️⃣ Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      # 3️⃣ Install pnpm
+      - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 9
 
-      - name: Build Vite App
+      # 4️⃣ Install dependencies
+      - name: Install dependencies
         run: |
           cd heart2home
           pnpm install
+
+      # 5️⃣ Build the Vite app
+      - name: Build Vite App
+        run: |
+          cd heart2home
           pnpm run build
+
 
           
       - name: Deploy to GitHub Pages
