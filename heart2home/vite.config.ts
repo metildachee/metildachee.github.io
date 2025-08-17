@@ -4,12 +4,20 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/heart2home/',
+  resolve: {
+    alias: {
+      fs: false,
+      path: false,
+      os: false,
+      module: false,
+    },
+  },
   optimizeDeps: {
-    exclude: ['fsevents'],   // 👈 ignore macOS-only dep
+    exclude: ['fsevents'],
   },
   build: {
     rollupOptions: {
-      external: ['fsevents'], // 👈 don’t try to bundle it
+      external: ['fsevents'],
     },
   },
 })
